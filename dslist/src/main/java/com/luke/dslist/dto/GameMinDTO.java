@@ -1,6 +1,7 @@
 package com.luke.dslist.dto;
 
 import com.luke.dslist.entities.Game;
+import com.luke.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -18,6 +19,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     /* In DTO we just need Getters */
